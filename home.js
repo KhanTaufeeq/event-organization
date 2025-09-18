@@ -1,20 +1,13 @@
-// const backgroundImg = document.querySelectorAll('.background-img');
-// console.log(backgroundImg);
+const menuIcon = document.getElementById('menu-icon');
+const menuDiv = document.querySelector('.menu-links');
+const mainBackground = document.querySelector('.main-background');
 
-// for (let i = 0; i < backgroundImg.length; i++){
-//     setTimeout(() => {
-//         backgroundImg[i].style.display = 'block';
-//     }, 2000)
-// }
-
-// setTimeout(() => {
-//     for (let i = 0; i < backgroundImg.length; i++){
-//         backgroundImg[i].style.display = 'block';
-//     }
-// }, 2000)
-
-// setInterval(() => {
-//     for (let i = 0; i < backgroundImg.length; i++){
-//         backgroundImg[i].style.display = 'block';
-//      }
-// }, 2000)
+menuIcon.addEventListener('click', () => {
+    if (menuDiv.style.display === 'block') {
+        menuDiv.style.display = 'none';
+        mainBackground.style.display = 'block';
+    } else {
+        menuDiv.style.display = 'block';
+        mainBackground.style.display = 'none';
+    }
+})
