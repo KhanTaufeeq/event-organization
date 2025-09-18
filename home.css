@@ -1,0 +1,163 @@
+*{
+    margin:0;
+    padding:0;
+    font-family: "Lora", serif;
+}
+
+:root{
+    --main-background: #f6e9cf;
+    --secondary-background: #472830;
+    --main-text-color: #472830;
+    --text-color: #f6e9cf;
+    --nav-height: 8.5rem;
+}
+
+/* header  */
+
+header{
+    background-color: var(--main-background);
+    width: 100%;
+    height: 100vh;
+}
+
+header nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    height: var(--nav-height);
+    margin: 0 auto;
+    position: sticky;
+}
+
+header nav .logo{
+    text-align: center;
+}
+
+header nav .logo h1{
+    color: var(--main-text-color);
+    font-weight: 600;
+}
+
+header nav .right-nav, 
+header nav .left-nav{
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav a{
+    color: var(--main-text-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+header nav a:hover{
+    text-decoration: underline;
+    text-underline-offset: 10px;
+}
+
+/* header .main-background{
+    width: 90%;
+    height: 70%;
+    margin: 0 auto;
+    border-radius: 10px;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    position: relative;
+} */
+
+header .main-background {
+    width: 90%;
+    height: 70%;
+    margin: 0 auto;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    position: relative;
+}
+
+/* header .main-background::-webkit-scrollbar{
+    width: 10px;
+    height: 10px;
+} */
+
+header .main-background::-webkit-scrollbar {
+    display: none;
+}
+
+/* header .main-background::-webkit-scrollbar-thumb{
+    background-color: var(--text-color);
+    border-radius: 10px;
+}
+
+header .main-background::-webkit-scrollbar-track{
+    background: white;
+    border-radius: 10px;
+} */
+
+header .main-background .background-img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    object-fit: cover;
+    border-radius: 10px;
+    transform-origin: center center;
+    transform: scale(1);
+    transition: transform 0.5s;
+    scroll-snap-align: start;
+}
+header .main-background .front-div{
+    width: 100%;
+    height: calc(4*100%);
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left:0;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    transform-origin: center center;
+    transform: scale(1);
+    transition: transform 0.5s;
+    scroll-snap-align: start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+@keyframes fadeInUp {
+    0%{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+header .main-background h1{
+    color: var(--text-color);
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    z-index:2;
+    font-weight: 400;
+    font-size: 4rem;
+    line-height: 1.2;
+    text-align: center;
+    overflow-wrap: break-word;
+    /* animation: fadeInUp 3s ease-in-out forwards; */
+}
